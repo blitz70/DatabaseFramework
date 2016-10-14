@@ -1,0 +1,14 @@
+[Database]
+CREATE SCHEMA `mydb` DEFAULT CHARACTER SET utf8 ;
+
+CREATE TABLE `mydb`.`student` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(45) DEFAULT NULL,
+  `last_name` VARCHAR(45) DEFAULT NULL,
+  `email` VARCHAR(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB AUTO_INCREMENT=6;
+
+[Libraries]
+	Add libraries : JDBC, Hibernate(required, jpa, java8)
+	Register to build path
