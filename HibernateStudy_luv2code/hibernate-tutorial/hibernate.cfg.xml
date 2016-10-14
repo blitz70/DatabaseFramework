@@ -1,0 +1,15 @@
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+
+        <!-- JDBC connection -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/mydb?useSSL=false</property>
+        <property name="connection.username">blitz</property>
+        <property name="connection.password">mysql</property>
+        <property name="conneciton.pool_size">1</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <property name="current_session_context_class">thread</property>
+
+    </session-factory>
+</hibernate-configuration>

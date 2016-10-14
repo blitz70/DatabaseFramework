@@ -1,0 +1,22 @@
+Map class to databse table
+    @Entity, @Table
+Map fields to database columns
+    @Id, @Column
+Eg)
+    @Entity
+    @Table(name = "student")
+    public class Student {
+        @Id
+        @Column(name = "PRIMARYKEYNAME")
+        private int id;
+
+        @Column(name = "first_name")
+        private String firstName;
+
+        @Column(name = "last_name")
+        private String lastName;
+
+        @Column(name = "email")
+        private String email;
+    }
+
