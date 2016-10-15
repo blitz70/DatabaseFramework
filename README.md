@@ -12,8 +12,11 @@ Database framework study
 * Test JDBC connection [8](https://www.youtube.com/watch?v=jstREQfDi8g&index=8&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe)
 
 * Hibernate
+
 >* Configuration file (xml) [9](https://www.youtube.com/watch?v=uJgd-NlC5co&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=9) [10](https://www.youtube.com/watch?v=kGvAp2N9GkU&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=10)
 * ORM (Annotation) [11](https://www.youtube.com/watch?v=6irKoPzB2RM&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=11) [12](https://www.youtube.com/watch?v=ReHc7RtwcH0&index=12&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe)
+* Save/Commit Object to Database [13](https://www.youtube.com/watch?v=XT2fZeaY9YQ&index=13&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [14](https://www.youtube.com/watch?v=6nKdp7gZkUw&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=14)
+
 
 
 

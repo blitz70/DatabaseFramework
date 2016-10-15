@@ -1,19 +1,48 @@
-Map class to db table : @Entity, @Table
-Map fields to db columns : @Id, @Column
-    @Entity
-    @Table(name = "student")
-    public class Student {
-        @Id
-        @Column(name = "PRIMARYKEYNAME")
-        private int id;
+Hibernate Configuration file (hibernate.cfg.xml)
+    Configure info needed by Hibernate
+        JDBC
+    Read by SessionFactory
+ORM, Object Relational Mapping
+    Concept : Map an Class to Database table
+        Map class to db table : @Entity, @Table
+        Map fields to db columns : @Id, @Column
+    Anotation mapping
+        @Entity
+        @Table(name = "student")
+        public class Student {
+            @Id
+            @Column(name = "PRIMARYKEYNAME")
+            private int id;
 
-        @Column(name = "first_name")
-        private String firstName;
+            @Column(name = "first_name")
+            private String firstName;
 
-        @Column(name = "last_name")
-        private String lastName;
+            @Column(name = "last_name")
+            private String lastName;
 
-        @Column(name = "email")
-        private String email;
-    }
-test
+            @Column(name = "email")
+            private String email;
+        }
+Save/Commit Object to Database
+    Concept
+        Session
+            Wrapper outside JDBC connection, does all the low lv database work
+            Object that is used to save&retrieve ORM objects from Database
+            Retieved from SessionFactory, short lived
+        SessionFactory
+            Creates Session objects according to the hibernate configuration file
+            Is heavy-weight, only create once per application
+    Setup
+        1. Prepare SessionFactory, Session
+        2. Transaction
+            Start transaction -> do transaction -> commit transaction
+        3. Code
+            SessionFactory factory = new Configuration()
+                    .configure("hibernate.cfg.xml")
+                    .addAnnotatedClass(Student.class)
+                    .buildSessionFactory();
+            Session session = factory.getCurrentSession();
+            Student tempStudent = new Student("Paul", "Wall", "paul@luv2code.com");
+            session.beginTransaction();
+            session.save(tempStudent);
+            session.getTransaction().commit();

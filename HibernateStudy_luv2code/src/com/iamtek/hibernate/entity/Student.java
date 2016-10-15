@@ -1,4 +1,4 @@
-package com.iamtek.hibernate;
+package com.iamtek.hibernate.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
