@@ -1,8 +1,5 @@
-Map class to databse table
-    @Entity, @Table
-Map fields to database columns
-    @Id, @Column
-Eg)
+Map class to db table : @Entity, @Table
+Map fields to db columns : @Id, @Column
     @Entity
     @Table(name = "student")
     public class Student {
@@ -19,4 +16,4 @@ Eg)
         @Column(name = "email")
         private String email;
     }
-
+test

@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- JDBC connection -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/mydb?useSSL=false</property>
+        <property name="connection.username">blitz</property>
+        <property name="connection.password">mysql</property>
+
+        <!--JDBC connection pool settings, using built-in test pool-->
+        <property name="conneciton.pool_size">1</property>
+
+        <!--Select ourSQL dialect-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!--Echo the SQL to stdout-->
+        <property name="show_sql">true</property>
+
+        <!--Set current session context-->
+        <property name="current_session_context_class">thread</property>
+
+    </session-factory>
+
+</hibernate-configuration>

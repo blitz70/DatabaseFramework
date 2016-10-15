@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/DatabaseFramework.iml" filepath="$PROJECT_DIR$/DatabaseFramework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HibernateStudy_luv2code/hibernate-tutorial/hibernate-tutorial.iml" filepath="$PROJECT_DIR$/HibernateStudy_luv2code/hibernate-tutorial/hibernate-tutorial.iml" />
-    </modules>
-  </component>
-</project>

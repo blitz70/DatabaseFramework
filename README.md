@@ -8,8 +8,12 @@ Database framework study
 * Setup
 
 >* Eclipse, MySQL [3](https://www.youtube.com/watch?v=bPJBcn0HusA&index=3&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [4](https://www.youtube.com/watch?v=cAGW1BAmVAc&index=4&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [5](https://www.youtube.com/watch?v=g-M-vxQOAyY&index=5&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [6](https://www.youtube.com/watch?v=gn2IE5_hXDo&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=6)
-* Hibernate [7](https://www.youtube.com/watch?v=gn2IE5_hXDo&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=6)
+* Hibernate library [7](https://www.youtube.com/watch?v=gn2IE5_hXDo&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=6)
 * Test JDBC connection [8](https://www.youtube.com/watch?v=jstREQfDi8g&index=8&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe)
+
+* Hibernate
+>* Configuration file (xml) [9](https://www.youtube.com/watch?v=uJgd-NlC5co&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=9) [10](https://www.youtube.com/watch?v=kGvAp2N9GkU&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=10)
+* ORM (Annotation) [11](https://www.youtube.com/watch?v=6irKoPzB2RM&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=11) [12](https://www.youtube.com/watch?v=ReHc7RtwcH0&index=12&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe)
 
 
 
