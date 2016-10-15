@@ -2,6 +2,7 @@ Hibernate Configuration file (hibernate.cfg.xml)
     Configure info needed by Hibernate
         JDBC
     Read by SessionFactory
+
 ORM, Object Relational Mapping
     Concept : Map an Class to Database table
         Map class to db table : @Entity, @Table
@@ -23,7 +24,18 @@ ORM, Object Relational Mapping
             @Column(name = "email")
             private String email;
         }
-Save/Commit Object to Database
+
+Primary Key
+    Default : Let DB handle the generation automatically
+    @GeneratedValue(strategy) : assign primary key generation strategy
+        strategy=GenerationType.AUTO : let db choose
+        IDENTITY : MySQL (AUTO_INCREMENT)
+        SEQUENCE : Oracle
+        TABLE : ...
+    Can make costume generation strategy, but not recommended
+        unique value, high-volume/multi-thread, server clusters
+
+Hibernate Session & Transaction
     Concept
         Session
             Wrapper outside JDBC connection, does all the low lv database work
@@ -32,10 +44,13 @@ Save/Commit Object to Database
         SessionFactory
             Creates Session objects according to the hibernate configuration file
             Is heavy-weight, only create once per application
+        Transaction
+            Do CRUD within transaction
+            Rollback?
     Setup
         1. Prepare SessionFactory, Session
         2. Transaction
-            Start transaction -> do transaction -> commit transaction
+            Start transaction -> do transaction(CRUD) -> commit transaction
         3. Code
             SessionFactory factory = new Configuration()
                     .configure("hibernate.cfg.xml")
@@ -46,3 +61,39 @@ Save/Commit Object to Database
             session.beginTransaction();
             session.save(tempStudent);
             session.getTransaction().commit();
+
+Hibernate C.R.U.D.
+    Concept
+        Create, read, update, delete objects from/to database
+    C.R.U.D.
+        Create objects : Create(save/commit) Java object to database with Hibernate
+            session.save(ORMEntityInstance);
+        Read objects : Retrieve(read) Java object from database with Hibernate
+            session.get(ORMEntityClass, PrimaryKey);
+        Update objects : Update Java object to database with Hibernate
+            ORMEntityInstance.setMethod();
+        Delete objects : Delete Java object from database with Hibernate
+            session.delete(ORMEntityInstance);
+    Commit
+        After session command, data manipulation is done in memory
+        After commit()
+            data is updated to database
+            for new data manipulation must renew session
+
+HQL : Hibernate Query Language
+    Concept
+        similar syntax to SQL but using Java notations, Class for table, fields for columns
+    C.R.U.D.
+        Create objects
+        Read objects
+            hql = "from Student";
+            hql = "from Student s where s.lastName='Doe'";
+            hql = "from Student where lastName='Doe' OR firstName='Daffy'"
+            hql = "from Student where email LIKE '%luv2code.com'"
+            session.createQuery(hql).list();
+        Update objects
+            hql = "update Student set email='foo@gmail.com'";
+            session.createQuery(hql).executeUpdate();
+        Delete objects
+            hql = "delete from Student where id=2";
+            session.createQuery(hql).executeUpdate();
