@@ -23,7 +23,7 @@ Database framework study
 
 * Ect
 
->* Eclipse, MySQL setup [3](https://www.youtube.com/watch?v=bPJBcn0HusA&index=3&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [4](https://www.youtube.com/watch?v=cAGW1BAmVAc&index=4&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [5](https://www.youtube.com/watch?v=g-M-vxQOAyY&index=5&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [6](https://www.youtube.com/watch?v=gn2IE5_hXDo&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=6)
+>* Eclipse(used IntelliJ for new IDE practice), MySQL setup [3](https://www.youtube.com/watch?v=bPJBcn0HusA&index=3&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [4](https://www.youtube.com/watch?v=cAGW1BAmVAc&index=4&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [5](https://www.youtube.com/watch?v=g-M-vxQOAyY&index=5&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe) [6](https://www.youtube.com/watch?v=gn2IE5_hXDo&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=6)
 * Test JDBC connection [8](https://www.youtube.com/watch?v=jstREQfDi8g&index=8&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe)
 * Primary Key Generation [15](https://www.youtube.com/watch?v=D4w-UCj0m9c&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=15) [16](https://www.youtube.com/watch?v=MlnNWp7yBLE&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe&index=16) [17](https://www.youtube.com/watch?v=3HfrwKFGI_8&index=17&list=PLEAQNNR8IlB6QiKZP0_5dYoId-7YXOdBe)
 
