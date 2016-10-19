@@ -9,7 +9,7 @@ public class TestJdbc {
 
         String jdbcUrl = "jdbc:mysql://localhost:3306/mydb?useSSL=false";
         String username = "blitz";
-        String password = "mysql";
+        String password = "blitz";
 
         try {
             System.out.println("Connecting to db: " + jdbcUrl);
