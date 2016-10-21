@@ -1,3 +1,5 @@
+[luv2code]
+
 Hibernate Configuration file (hibernate.cfg.xml)
     Configure info needed by Hibernate
         JDBC
@@ -97,3 +99,16 @@ HQL : Hibernate Query Language
         Delete objects
             hql = "delete from Student where id=2";
             session.createQuery(hql).executeUpdate();
+
+[Java Brains]
+No Hibernate      vs      With Hibernate
+    JDBC configuration    Hibernate configuration
+    Model object          Annotations
+    Service method        Hibernate API
+    Database design       X
+    DAO coding            X
+
+Hibernate API
+    Create session factory
+    Create session from session factory
+    Use session to save model objects
