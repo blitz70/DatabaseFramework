@@ -7,22 +7,22 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.Date;
 
-public class HibernateTest {
+public class PrimaryKey {
 
     public static void main(String[] args) {
 
         UserDetails user = new UserDetails();
-        user.setUserId(1);
-        user.setUserName("1 user");
-        user.setAddress("1 user address");
-        user.setJoinedDate(new Date());
-        user.setDescription("1 user desc");
-        user.setTransientField("not saved");
+        user.setUserId(10);  //is ignored
+        user.setUserName("First user");
+
+        UserDetails user2 = new UserDetails();
+        user2.setUserName("Second user");
 
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);
+        session.save(user2);
         session.getTransaction().commit();
         session.close();
 

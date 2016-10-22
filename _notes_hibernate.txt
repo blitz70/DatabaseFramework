@@ -127,21 +127,43 @@ Configuration
 
 Entity mapping , table customization
     Concept : maps how entity(java object) is mapped to table(db object), entity-table relationship
-    Table : default = class name
-        @Entity (name="table_name") : changes entity name, must use changed name in HQL
-        @Entity @Table(name="table_name")
-    Column : default = field name
-        @Column(name = "column_name")
-        Can be placed over field or field getter
+    DB object name
+        Table : default = class name
+            @Entity (name="table_name") : changes entity name, must use changed name in HQL
+            @Entity @Table(name="table_name")
+        Column : default = field name
+            @Column(name = "column_name")
+            Can be placed over field or field getter
+    Entity field
+        Persistent field : @Basic, default, field is persistent and hibernate tracks it
+        Transient field : @Transient, hibernate ignores field, used for fields that aren't persistent
+        Date field : @Temporal, sets db datetime related data type, default is timestamp
+            @Temporal(TemporalType.DATE)
+        Field size : @Lob, @Clob @Blob, sets db for large data, auto string number
     Ex
-        Default
-            @Entity
-            public class UserDetails {
-                @Id
-                private int userId;
-                private String userName;
-            }
-            create table UserDetails (userId int4 not null, userName varchar(255), primary key (userId))
-        Custom
+        @Entity
+        @Table (name = "USER_DETAILS")
+        public class UserDetails {
+            @Id
+            private int userId;
+            @Column(name = "USER_NAME")
+            private String userName;
+            @Temporal(TemporalType.DATE)
+            private Date joinedDate;
+            private String address;
+            @Lob
+            private String description;
+            @Transient
+            private String transientField;
+            ...
+        }
+        create table USER_DETAILS (userId int4 not null, address varchar(255), description text, joinedDate date, USER_NAME varchar(255), primary key (userId))
+
+Primary key
+    Natural key : has more use than just providing unique number, manual management
+    Surrogate key : its use is only to provide unique number, auto management
+        @GeneratedValue(strategy=GenerationType.AUTO)
+            auto management of pk by hibernate, ignores manual setting of pk, AUTO(Default) IDENTITY SEQUENCE TABLE
+
 [IntelliJ]
 Class hierarchy : ctrl + h

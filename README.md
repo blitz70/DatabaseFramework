@@ -38,9 +38,10 @@ Database framework study with IntelliJ
 * Libraries [2](https://www.youtube.com/watch?v=bzPkebUXxn0&list=PL4AFF701184976B25&index=2)
 * hibernate.cfg.xml [3](https://www.youtube.com/watch?v=N2F1zCAf_NU&list=PL4AFF701184976B25&index=3)
 * Annotated model class [4](https://www.youtube.com/watch?v=3eXjpve0QaI&index=4&list=PL4AFF701184976B25)
-* Hibernate API [5](https://www.youtube.com/watch?v=FFMOZY4z6bE&list=PL4AFF701184976B25&index=5)
+* Saving Entity [5](https://www.youtube.com/watch?v=FFMOZY4z6bE&list=PL4AFF701184976B25&index=5)
 
-* ?
+* Entity Mapping (JPA)
 
->* Configuration & Annotation [6](https://www.youtube.com/watch?v=iaSd_yK9xaw&list=PL4AFF701184976B25&index=6)
-[7](https://www.youtube.com/watch?v=I8YmYFI5D_E&list=PL4AFF701184976B25&index=7)
+>* Configuration & Annotations [6](https://www.youtube.com/watch?v=iaSd_yK9xaw&list=PL4AFF701184976B25&index=6) [7](https://www.youtube.com/watch?v=I8YmYFI5D_E&list=PL4AFF701184976B25&index=7)
+* Getting Entity [8](https://www.youtube.com/watch?v=3FV1yv7fvDQ&list=PL4AFF701184976B25&index=8)
+* Primary key [9](https://www.youtube.com/watch?v=Xuofihmkl_k&index=9&list=PL4AFF701184976B25)
