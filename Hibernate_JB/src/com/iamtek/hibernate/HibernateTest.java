@@ -10,14 +10,18 @@ public class HibernateTest {
     public static void main(String[] args) {
 
         UserDetails user = new UserDetails();
-        user.setUserId(1);
-        user.setUserName("First User");
+        user.setUserId(3);
+        user.setUserName("3rd User");
 
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        /*SessionFactory sessionFactory = new Configuration()
+                .configure("hibernate.cfg.xml").addAnnotatedClass(UserDetails.class)
+                .buildSessionFactory(); //same as adding entity classes in hibernate.cfg.xml*/
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);
         session.getTransaction().commit();
+        sessionFactory.close();
 
     }
 }

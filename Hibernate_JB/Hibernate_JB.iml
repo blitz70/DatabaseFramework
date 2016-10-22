@@ -9,5 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="hibernate" level="application" />
     <orderEntry type="library" name="jdbc" level="application" />
+    <orderEntry type="library" name="hibernate" level="application" />
+    <orderEntry type="library" name="jdbc" level="application" />
   </component>
 </module>

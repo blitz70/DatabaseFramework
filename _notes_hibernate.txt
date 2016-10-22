@@ -112,3 +112,36 @@ Hibernate API
     Create session factory
     Create session from session factory
     Use session to save model objects
+
+Configuration
+    hibernate.cfg.xml : xml setup for hibernate
+        loaded using configure(), can customize name & path as parameter
+        SessionFactory sessionFactory = new Configuration().configure(...).buildSessionFactory();
+    Register entity classes : adding entity classes to session factory
+        XML : <mapping class="..."/>
+        Annotation : addAnnotatedClass(...), can be chained
+    DB strategy : sets up how hibernate manages database
+        XML : <property name="hbm2ddl.auto"></property> : table is managed by hibernate(auto table creation)
+            create : at startup db is reset
+            update : db is only updated/changed
+
+Entity mapping , table customization
+    Concept : maps how entity(java object) is mapped to table(db object), entity-table relationship
+    Table : default = class name
+        @Entity (name="table_name") : changes entity name, must use changed name in HQL
+        @Entity @Table(name="table_name")
+    Column : default = field name
+        @Column(name = "column_name")
+        Can be placed over field or field getter
+    Ex
+        Default
+            @Entity
+            public class UserDetails {
+                @Id
+                private int userId;
+                private String userName;
+            }
+            create table UserDetails (userId int4 not null, userName varchar(255), primary key (userId))
+        Custom
+[IntelliJ]
+Class hierarchy : ctrl + h

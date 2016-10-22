@@ -32,11 +32,15 @@ Database framework study with IntelliJ
 
 ##Hibernate 2 : Video 01-36, English [(Java Brains)](https://javabrains.io/topics/hibernate "Java Brains")
 
-* Concept
+* Introduction
 
->* Introduction [1](https://www.youtube.com/watch?v=Yv2xctJxE-w&index=1&list=PL4AFF701184976B25)
+>* Concept [1](https://www.youtube.com/watch?v=Yv2xctJxE-w&index=1&list=PL4AFF701184976B25)
 * Libraries [2](https://www.youtube.com/watch?v=bzPkebUXxn0&list=PL4AFF701184976B25&index=2)
 * hibernate.cfg.xml [3](https://www.youtube.com/watch?v=N2F1zCAf_NU&list=PL4AFF701184976B25&index=3)
 * Annotated model class [4](https://www.youtube.com/watch?v=3eXjpve0QaI&index=4&list=PL4AFF701184976B25)
 * Hibernate API [5](https://www.youtube.com/watch?v=FFMOZY4z6bE&list=PL4AFF701184976B25&index=5)
 
+* ?
+
+>* Configuration & Annotation [6](https://www.youtube.com/watch?v=iaSd_yK9xaw&list=PL4AFF701184976B25&index=6)
+[7](https://www.youtube.com/watch?v=I8YmYFI5D_E&list=PL4AFF701184976B25&index=7)
