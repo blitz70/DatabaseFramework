@@ -5,9 +5,9 @@ import java.util.Date;
 
 @Entity
 @Table (name = "USER_DETAILS")
-public class UserDetails {
+public class UserDetails2 {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
     private int userId;
     @Column(name = "USER_NAME")
     private String userName;

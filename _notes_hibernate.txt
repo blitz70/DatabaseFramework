@@ -140,30 +140,28 @@ Entity mapping , table customization
         Date field : @Temporal, sets db datetime related data type, default is timestamp
             @Temporal(TemporalType.DATE)
         Field size : @Lob, @Clob @Blob, sets db for large data, auto string number
-    Ex
-        @Entity
-        @Table (name = "USER_DETAILS")
-        public class UserDetails {
-            @Id
-            private int userId;
-            @Column(name = "USER_NAME")
-            private String userName;
-            @Temporal(TemporalType.DATE)
-            private Date joinedDate;
-            private String address;
-            @Lob
-            private String description;
-            @Transient
-            private String transientField;
-            ...
-        }
-        create table USER_DETAILS (userId int4 not null, address varchar(255), description text, joinedDate date, USER_NAME varchar(255), primary key (userId))
+    Primary key
+        Natural key : has more use than just providing unique number, manual management
+        Surrogate key : @GeneratedValue, use is only to provide unique number
+            auto management of pk by hibernate, ignores manual setting of pk
+            AUTO(Default) IDENTITY(MySQL) SEQUENCE(Oracle) TABLE
+            @GeneratedValue(strategy=GenerationType.AUTO)
 
-Primary key
-    Natural key : has more use than just providing unique number, manual management
-    Surrogate key : its use is only to provide unique number, auto management
-        @GeneratedValue(strategy=GenerationType.AUTO)
-            auto management of pk by hibernate, ignores manual setting of pk, AUTO(Default) IDENTITY SEQUENCE TABLE
+Value object
+    Concept
+        Entity object : has own meaning, has mapped db table
+        Value object : doesn't have own meaning, part of Entity object
+    Annotation
+        Declaration : use either
+            @Embeddable : marks class as value object
+            @Embedded : marks entity field as value object
+        Column name
+            @AttributeOverride : overrides default db column name
+                @AttributeOverride(name = "street", column = @Column(name = "HOME_STREET_NAME"))
+            @AttributeOverrides : overrides multiple db column names
+                @AttributeOverrides({@AttributeOverride(), ...})
+        Primary key
+            @Id -> @EmbeddedId
 
 [IntelliJ]
 Class hierarchy : ctrl + h

@@ -45,3 +45,4 @@ Database framework study with IntelliJ
 >* Configuration & Annotations [6](https://www.youtube.com/watch?v=iaSd_yK9xaw&list=PL4AFF701184976B25&index=6) [7](https://www.youtube.com/watch?v=I8YmYFI5D_E&list=PL4AFF701184976B25&index=7)
 * Getting Entity [8](https://www.youtube.com/watch?v=3FV1yv7fvDQ&list=PL4AFF701184976B25&index=8)
 * Primary key [9](https://www.youtube.com/watch?v=Xuofihmkl_k&index=9&list=PL4AFF701184976B25)
+* Value/Embedded Object [10](https://www.youtube.com/watch?v=c2abcy0Q1a0&list=PL4AFF701184976B25&index=10) [11](https://www.youtube.com/watch?v=X8t6oYp0Uk8&list=PL4AFF701184976B25&index=11)

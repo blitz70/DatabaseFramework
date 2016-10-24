@@ -8,8 +8,10 @@ public class TestJdbc {
     public static void main(String[] args) {
 
         String jdbcUrl = "jdbc:postgresql://localhost:5432/mydb";
-        String username = "postgres";
-        String password = "postgresql";
+        /*String username = "postgres";
+        String password = "postgresql";*/
+        String username = "blitz";
+        String password = "blitz";
 
         try {
             System.out.println("Connecting to db: " + jdbcUrl);
