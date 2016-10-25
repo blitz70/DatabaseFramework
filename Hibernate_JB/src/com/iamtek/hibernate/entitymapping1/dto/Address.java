@@ -1,4 +1,4 @@
-package com.iamtek.hibernate.dto;
+package com.iamtek.hibernate.entitymapping1.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

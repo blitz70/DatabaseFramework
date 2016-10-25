@@ -1,10 +1,9 @@
-package com.iamtek.hibernate.dto;
+package com.iamtek.hibernate.introduction.dto;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-public class UserDetails1 {
+public class UserDetails {
 
     @Id
     private int userId;

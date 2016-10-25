@@ -1,7 +1,6 @@
-package com.iamtek.hibernate;
+package com.iamtek.hibernate.entitymapping1;
 
-import com.iamtek.hibernate.dto.UserDetails2;
-import com.iamtek.hibernate.dto.UserDetails3;
+import com.iamtek.hibernate.entitymapping1.dto.UserDetails3;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

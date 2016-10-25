@@ -46,3 +46,8 @@ Database framework study with IntelliJ
 * Getting Entity [8](https://www.youtube.com/watch?v=3FV1yv7fvDQ&list=PL4AFF701184976B25&index=8)
 * Primary key [9](https://www.youtube.com/watch?v=Xuofihmkl_k&index=9&list=PL4AFF701184976B25)
 * Value/Embedded Object [10](https://www.youtube.com/watch?v=c2abcy0Q1a0&list=PL4AFF701184976B25&index=10) [11](https://www.youtube.com/watch?v=X8t6oYp0Uk8&list=PL4AFF701184976B25&index=11)
+
+* Complex Entity Mapping
+
+>* Collections [12](https://www.youtube.com/watch?v=hofWx5_ZN9c&list=PL4AFF701184976B25&index=12) [13](https://www.youtube.com/watch?v=kk207HAym_I&list=PL4AFF701184976B25&index=13)
+

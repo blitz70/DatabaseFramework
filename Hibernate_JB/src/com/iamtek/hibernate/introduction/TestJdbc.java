@@ -1,4 +1,4 @@
-package com.iamtek.hibernate;
+package com.iamtek.hibernate.introduction;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

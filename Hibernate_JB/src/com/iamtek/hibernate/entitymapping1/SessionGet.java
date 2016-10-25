@@ -1,14 +1,13 @@
-package com.iamtek.hibernate;
+package com.iamtek.hibernate.entitymapping1;
 
-import com.iamtek.hibernate.dto.UserDetails2;
-import com.iamtek.hibernate.dto.UserDetails5;
+import com.iamtek.hibernate.entitymapping1.dto.UserDetails2;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import java.util.Date;
 
-public class Annotations {
+public class SessionGet {
 
     public static void main(String[] args) {
 
@@ -24,6 +23,15 @@ public class Annotations {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);
+        session.getTransaction().commit();
+        session.close();
+
+        user = null;
+
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+        user = session.get(UserDetails2.class, 1);
+        System.out.println("user name retrieved is " + user.getUserName());
         session.getTransaction().commit();
         session.close();
 

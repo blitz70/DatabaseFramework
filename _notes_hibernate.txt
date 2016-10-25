@@ -163,5 +163,15 @@ Value object
         Primary key
             @Id -> @EmbeddedId
 
+Collections
+    @ElementCollection
+    @JoinTable(name = "USER_ADDRESS", joinColumns = @JoinColumn(name = "USER_ID"))
+    @GenericGenerator(name = "hilo-gen", strategy = "hilo")
+    @CollectionId(columns = {@Column(name = "ADDRESS_ID")}
+            , type = @Type(type = "long")
+            , generator = "hilo"
+    )
+
+
 [IntelliJ]
 Class hierarchy : ctrl + h
