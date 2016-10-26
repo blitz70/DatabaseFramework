@@ -28,7 +28,7 @@ public class Collections1 {
         user.getListOfAddress().add(addr1);
         user.getListOfAddress().add(addr2);
 
-        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails1.class).buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure("/com/iamtek/hibernate/entitymapping2/myhibernate.cfg.xml").buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);

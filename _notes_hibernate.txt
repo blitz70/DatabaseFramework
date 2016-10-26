@@ -116,6 +116,7 @@ Hibernate API
 Configuration
     hibernate.cfg.xml : xml setup for hibernate
         loaded using configure(), can customize name & path as parameter
+        default location : src, path = relative path
         SessionFactory sessionFactory = new Configuration().configure(...).buildSessionFactory();
     Register entity classes : adding entity classes to session factory
         XML : <mapping class="..."/>
@@ -146,31 +147,37 @@ Entity mapping , table customization
             auto management of pk by hibernate, ignores manual setting of pk
             AUTO(Default) IDENTITY(MySQL) SEQUENCE(Oracle) TABLE
             @GeneratedValue(strategy=GenerationType.AUTO)
+    Value object
+        Concept
+            Entity object : has own meaning, is mapped db table
+            Value object : doesn't have own meaning, is always part of Entity object
+        Annotation
+            Declaration : use either
+                @Embeddable : marks class as value object
+                @Embedded : marks entity field as value object
+            Customization
+                @AttributeOverride : overrides default db column name
+                    @AttributeOverride(name = "street", column = @Column(name = "HOME_STREET_NAME"))
+                @AttributeOverrides : overrides multiple db column names
+                    @AttributeOverrides({@AttributeOverride(), ...})
+            Primary key
+                @Id -> @EmbeddedId
 
-Value object
-    Concept
-        Entity object : has own meaning, has mapped db table
-        Value object : doesn't have own meaning, part of Entity object
-    Annotation
-        Declaration : use either
-            @Embeddable : marks class as value object
-            @Embedded : marks entity field as value object
-        Column name
-            @AttributeOverride : overrides default db column name
-                @AttributeOverride(name = "street", column = @Column(name = "HOME_STREET_NAME"))
-            @AttributeOverrides : overrides multiple db column names
-                @AttributeOverrides({@AttributeOverride(), ...})
-        Primary key
-            @Id -> @EmbeddedId
-
-Collections
-    @ElementCollection
-    @JoinTable(name = "USER_ADDRESS", joinColumns = @JoinColumn(name = "USER_ID"))
-    @GenericGenerator(name = "hilo-gen", strategy = "hilo")
-    @CollectionId(columns = {@Column(name = "ADDRESS_ID")}
-            , type = @Type(type = "long")
-            , generator = "hilo"
-    )
+Complex Entity mapping
+    Concept : mapping of complex entity with members(collections) requiring extra table mappings
+    Collections
+        Annotation
+            Declaration
+                @ElementCollection
+            Customization
+                @JoinTable(name = "USER_ADDRESS", joinColumns = @JoinColumn(name = "USER_ID"))
+            Primary key
+                @GenericGenerator : depends on type of database, "hilo" not used
+                    @GenericGenerator(name="sequence-gen",strategy="sequence")
+                @CollectionId(columns = {@Column(name = "ADDRESS_ID")}
+                        , type = @Type(type = "long")
+                        , generator = "sequence-gen"
+                )
 
 
 [IntelliJ]

@@ -14,7 +14,6 @@ public class UserDetails1 {
     private String userName;
 
     @ElementCollection
-    @JoinTable(name = "USER_ADDRESS", joinColumns = @JoinColumn(name = "USER_ID"))
     private Set<Address> listOfAddress = new HashSet<>();
 
     public int getUserId() {
