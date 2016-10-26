@@ -126,7 +126,7 @@ Configuration
             create : at startup db is reset
             update : db is only updated/changed
 
-Entity mapping , table customization
+Entity mapping 1, table customization
     Concept : maps how entity(java object) is mapped to table(db object), entity-table relationship
     DB object name
         Table : default = class name
@@ -163,8 +163,10 @@ Entity mapping , table customization
             Primary key
                 @Id -> @EmbeddedId
 
-Complex Entity mapping
-    Concept : mapping of complex entity with members(collections) requiring extra table mappings
+Entity mapping 2
+    Overview
+        Collection (complex value objects)
+        Proxy & Fetch type
     Collections
         Annotation
             Declaration
@@ -178,7 +180,13 @@ Complex Entity mapping
                         , type = @Type(type = "long")
                         , generator = "sequence-gen"
                 )
-
+    Proxy & Fetch type
+        Proxy object
+        Fetch strategy
+            Lazy : default, load data from db when needed/uses
+            Eager : load all data on entity initialization
+        Annotation
+            @ElementCollection(fetch = FetchType.EAGER)
 
 [IntelliJ]
 Class hierarchy : ctrl + h
