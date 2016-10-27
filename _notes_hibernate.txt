@@ -127,7 +127,8 @@ Configuration
             update : db is only updated/changed
 
 Entity mapping 1, table customization
-    Concept : maps how entity(java object) is mapped to table(db object), entity-table relationship
+    Concept
+        Maps how entity(java object) is mapped to table(db object), entity-table relationship
     DB object name
         Table : default = class name
             @Entity (name="table_name") : changes entity name, must use changed name in HQL
@@ -147,6 +148,12 @@ Entity mapping 1, table customization
             auto management of pk by hibernate, ignores manual setting of pk
             AUTO(Default) IDENTITY(MySQL) SEQUENCE(Oracle) TABLE
             @GeneratedValue(strategy=GenerationType.AUTO)
+
+Entity mapping 2
+    Overview
+        Value object
+        Collection (complex value objects)
+        Proxy object & Fetch type
     Value object
         Concept
             Entity object : has own meaning, is mapped db table
@@ -162,12 +169,10 @@ Entity mapping 1, table customization
                     @AttributeOverrides({@AttributeOverride(), ...})
             Primary key
                 @Id -> @EmbeddedId
-
-Entity mapping 2
-    Overview
-        Collection (complex value objects)
-        Proxy & Fetch type
     Collections
+        Concept
+            Value object where number of parts is unknown
+            Can not be mapped to same table of the entity
         Annotation
             Declaration
                 @ElementCollection
@@ -180,13 +185,48 @@ Entity mapping 2
                         , type = @Type(type = "long")
                         , generator = "sequence-gen"
                 )
-    Proxy & Fetch type
+    Proxy object & Fetch type
         Proxy object
         Fetch strategy
             Lazy : default, load data from db when needed/uses
+                useful if entity have members with large sub structure
             Eager : load all data on entity initialization
         Annotation
             @ElementCollection(fetch = FetchType.EAGER)
+    One to One mapping
+        Concept
+            Entity within entity
+        Annotation
+            Declaration
+                @OneToOne
+            Customization
+                @JoinColumn(name = "VEHICLE_ID")
+    One to Many, Many to One mapping
+        Annotation
+            Declaration
+                @OneToMany
+                @ManyToOne
+            Customization
+                @OneToMany @JoinTable(
+                        name = "USER_VEHICLE"
+                        , joinColumns = @JoinColumn(name = "USER_ID")
+                        , inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID")
+                )
+                @OneToMany(mappedBy = "user")
+                @ManyToOne @JoinColumn(name = "USER_ID")
+    Many to Many mapping
+        table duplication
+        Annotation
+            Declaration
+                @ManyToMany
+            Customization
+                @JoinTable(
+                    name = "USER_VEHICLE"
+                    , joinColumns = @JoinColumn(name = "USER_ID")
+                    , inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID")
+                )
+    Legacy Data
+        @NotFound(action=NotFoundAction.IGNORE)
 
 [IntelliJ]
 Class hierarchy : ctrl + h

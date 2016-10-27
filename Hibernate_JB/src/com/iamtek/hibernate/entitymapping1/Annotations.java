@@ -19,7 +19,7 @@ public class Annotations {
         user.setDescription("First user desc");
         user.setTransientField("not saved");
 
-        SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg1.xml").addAnnotatedClass(UserDetails2.class).buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure("com/iamtek/hibernate/entitymapping1/hibernate.cfg1.xml").buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);

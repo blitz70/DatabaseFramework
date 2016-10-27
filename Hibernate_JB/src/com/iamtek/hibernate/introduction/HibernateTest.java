@@ -13,7 +13,7 @@ public class HibernateTest {
         user.setUserId(3);
         user.setUserName("Third user");
 
-        SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg1.xml").buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure("com/iamtek/hibernate/entitymapping1/hibernate.cfg1.xml").buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);
