@@ -1,5 +1,4 @@
 [luv2code]
-
 Hibernate Configuration file (hibernate.cfg.xml)
     Configure info needed by Hibernate
         JDBC
@@ -151,15 +150,15 @@ Simple Entity mapping
             AUTO(Default) IDENTITY(MySQL) SEQUENCE(Oracle) TABLE
             @GeneratedValue(strategy=GenerationType.AUTO)
 
-Entity Mapping, Entity with Value Objects
+Entity with Value Objects
     Overview
         Mapping entity with value objects
-        Collection (complex value objects)
+        Collections (complex value objects)
         Proxy object & Fetch type
     Value object
         Concept
             Entity object : has own meaning, is mapped db table
-            Value object : doesn't have own meaning, is always part of Entity object
+            Value object : doesn't have own meaning, is always part of entity object
         Annotation
             Declaration : use either
                 @Embeddable : marks class as value object
@@ -196,7 +195,7 @@ Entity Mapping, Entity with Value Objects
         Annotation
             @ElementCollection(fetch = FetchType.EAGER)
 
-Entity Mapping, Entity with entities
+Entity with Entities
     One to One mapping
         Concept
             Entity within entity
@@ -237,6 +236,33 @@ Entity Mapping, Entity with entities
             All : when an entity is changed so are all the sub entities
         @OneToMany(cascade = CascadeType.PERSIST)
 
+Inheritance
+    Concept
+        Decides how entity inheritance is handled by hibernate
+        Parent : @Inheritance
+    Inheritance strategy
+        Single Table strategy (Default)
+            All entities maps to a single table
+            All child entity fields are added to the table
+            Inefficient db design, lots of unused space
+        Table Per Class
+            Each entity maps to a table
+            Parent entity fields are passed down and added to child entity table
+            Primary key is inherited
+            Normalized table
+        JOINED
+            Each entity maps to a table
+            Parent entity fields aren't passed down
+            Primary key is passed down
+            Normalized table, most efficient but data must be crossed referenced
+    Annotation
+        Single Table : @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+        Table Per Class : @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+        Joined : @Inheritance(strategy = InheritanceType.JOINED)
+    Discriminator
+        Column representing mapped class, used in single table
+        Parent : @DiscriminatorColumn(name = "VEHICLE_TYPE", discriminatorType = DiscriminatorType.STRING)
+        Child : @DiscriminatorValue(value = "2W")
 
 [IntelliJ]
 Class hierarchy : ctrl + h

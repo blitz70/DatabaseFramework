@@ -47,17 +47,21 @@ Database framework study with IntelliJ
 * Primary key [9](https://www.youtube.com/watch?v=Xuofihmkl_k&index=9&list=PL4AFF701184976B25)
 
 
-* Entity Mapping, Entity with Value Objects
+* Entity with Value Objects
 
 >* Value/Embedded Object [10](https://www.youtube.com/watch?v=c2abcy0Q1a0&list=PL4AFF701184976B25&index=10) [11](https://www.youtube.com/watch?v=X8t6oYp0Uk8&list=PL4AFF701184976B25&index=11)
 * Collections [12](https://www.youtube.com/watch?v=hofWx5_ZN9c&list=PL4AFF701184976B25&index=12) [13](https://www.youtube.com/watch?v=kk207HAym_I&list=PL4AFF701184976B25&index=13)
-* Proxy Object & Fetch Type [14](https://www.youtube.com/watch?v=RmnrgocuivQ&index=14&list=PL4AFF701184976B25)
+* Proxy, Lazy & Eager Fetch  [14](https://www.youtube.com/watch?v=RmnrgocuivQ&index=14&list=PL4AFF701184976B25)
 
-* Entity Mapping, Entity with entities
+* Entity with Entities
 
->* One To One Mapping [15](https://www.youtube.com/watch?v=Of7qR-WagYk&index=15&list=PL4AFF701184976B25)
-* One To Many Mapping [16](https://www.youtube.com/watch?v=4mANZ4MMbD4&list=PL4AFF701184976B25&index=16)
-* Many To Many Mapping [17](https://www.youtube.com/watch?v=jAi8bY-H_ek&index=17&list=PL4AFF701184976B25)
-* Cascade Type [18](https://www.youtube.com/watch?v=K2Id3WLZWJI&index=18&list=PL4AFF701184976B25)
+>* One to One [15](https://www.youtube.com/watch?v=Of7qR-WagYk&index=15&list=PL4AFF701184976B25)
+* One to Many, Many to One [16](https://www.youtube.com/watch?v=4mANZ4MMbD4&list=PL4AFF701184976B25&index=16)
+* Many to Many [17](https://www.youtube.com/watch?v=jAi8bY-H_ek&index=17&list=PL4AFF701184976B25)
+* Cascade [18](https://www.youtube.com/watch?v=K2Id3WLZWJI&index=18&list=PL4AFF701184976B25)
 
-* Inheritance [19](https://www.youtube.com/watch?v=Zj1mRWfhx_Y&index=19&list=PL4AFF701184976B25)
+* Inheritance
+
+>* Single Table [19](https://www.youtube.com/watch?v=Zj1mRWfhx_Y&index=19&list=PL4AFF701184976B25) [20](https://www.youtube.com/watch?v=M5YrLtAHtOo&index=20&list=PL4AFF701184976B25)
+* Table Per Class [21](https://www.youtube.com/watch?v=qIdM4KQOtH8&index=21&list=PL4AFF701184976B25)
+* Joined [22](https://www.youtube.com/watch?v=o1b3HFIlDS0&index=22&list=PL4AFF701184976B25)

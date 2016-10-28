@@ -3,13 +3,13 @@ package com.iamtek.hibernate.inheritance.dto;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "VEHICLE")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "VEHICLE_TYPE", discriminatorType = DiscriminatorType.STRING)
+public class Vehicle1 {
 
-public class Vehicle {
-
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue
     private int vehicleId;
-
     private String vehicleName;
 
     public int getVehicleId() {
@@ -27,5 +27,4 @@ public class Vehicle {
     public void setVehicleName(String vehicleName) {
         this.vehicleName = vehicleName;
     }
-
 }
