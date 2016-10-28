@@ -1,8 +1,7 @@
 package com.iamtek.hibernate.entitymapping2;
 
 import com.iamtek.hibernate.entitymapping2.dto.Address;
-import com.iamtek.hibernate.entitymapping2.dto.UserDetails2;
-import com.iamtek.hibernate.entitymapping2.dto.UserDetails3;
+import com.iamtek.hibernate.entitymapping2.dto.UserDetails1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -11,7 +10,7 @@ public class ProxyObject {
 
     public static void main(String[] args) {
 
-        UserDetails3 user = new UserDetails3();
+        UserDetails1 user = new UserDetails1();
         user.setUserName("First User");
 
         Address addr1 = new Address();
@@ -29,7 +28,7 @@ public class ProxyObject {
         user.getListOfAddress().add(addr1);
         user.getListOfAddress().add(addr2);
 
-        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails3.class).buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails1.class).buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);
@@ -39,7 +38,7 @@ public class ProxyObject {
         user = null;
 
         session = sessionFactory.openSession();
-        user = session.get(UserDetails3.class, 1);
+        user = session.get(UserDetails1.class, 1);
         session.close();
         System.out.println(user.getUserId() + ", " + user.getUserName());
         System.out.println(user.getListOfAddress().size());

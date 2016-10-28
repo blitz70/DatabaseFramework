@@ -40,18 +40,22 @@ Database framework study with IntelliJ
 * Annotated model class [4](https://www.youtube.com/watch?v=3eXjpve0QaI&index=4&list=PL4AFF701184976B25)
 * Saving Entity [5](https://www.youtube.com/watch?v=FFMOZY4z6bE&list=PL4AFF701184976B25&index=5)
 
-* Entity Mapping 1 (JPA)
+* Simple Entity Mapping (JPA)
 
 >* Configuration & Annotations [6](https://www.youtube.com/watch?v=iaSd_yK9xaw&list=PL4AFF701184976B25&index=6) [7](https://www.youtube.com/watch?v=I8YmYFI5D_E&list=PL4AFF701184976B25&index=7)
 * Getting Entity [8](https://www.youtube.com/watch?v=3FV1yv7fvDQ&list=PL4AFF701184976B25&index=8)
 * Primary key [9](https://www.youtube.com/watch?v=Xuofihmkl_k&index=9&list=PL4AFF701184976B25)
-* Value/Embedded Object [10](https://www.youtube.com/watch?v=c2abcy0Q1a0&list=PL4AFF701184976B25&index=10) [11](https://www.youtube.com/watch?v=X8t6oYp0Uk8&list=PL4AFF701184976B25&index=11)
 
-* Entity Mapping 2
 
->* Collections [12](https://www.youtube.com/watch?v=hofWx5_ZN9c&list=PL4AFF701184976B25&index=12) [13](https://www.youtube.com/watch?v=kk207HAym_I&list=PL4AFF701184976B25&index=13)
-* Proxy object & Fetch type [14](https://www.youtube.com/watch?v=RmnrgocuivQ&index=14&list=PL4AFF701184976B25)
-* One To One Mapping [15](https://www.youtube.com/watch?v=Of7qR-WagYk&index=15&list=PL4AFF701184976B25)
+* Entity Mapping, Entity with Value Objects
+>* Value/Embedded Object [10](https://www.youtube.com/watch?v=c2abcy0Q1a0&list=PL4AFF701184976B25&index=10) [11](https://www.youtube.com/watch?v=X8t6oYp0Uk8&list=PL4AFF701184976B25&index=11)
+* Collections [12](https://www.youtube.com/watch?v=hofWx5_ZN9c&list=PL4AFF701184976B25&index=12) [13](https://www.youtube.com/watch?v=kk207HAym_I&list=PL4AFF701184976B25&index=13)
+* Proxy Object & Fetch Type [14](https://www.youtube.com/watch?v=RmnrgocuivQ&index=14&list=PL4AFF701184976B25)
+
+* Entity Mapping, Entity with entities
+>* One To One Mapping [15](https://www.youtube.com/watch?v=Of7qR-WagYk&index=15&list=PL4AFF701184976B25)
 * One To Many Mapping [16](https://www.youtube.com/watch?v=4mANZ4MMbD4&list=PL4AFF701184976B25&index=16)
 * Many To Many Mapping [17](https://www.youtube.com/watch?v=jAi8bY-H_ek&index=17&list=PL4AFF701184976B25)
+* Cascade Type [18](https://www.youtube.com/watch?v=K2Id3WLZWJI&index=18&list=PL4AFF701184976B25)
 
+* Inheritance [19](https://www.youtube.com/watch?v=Zj1mRWfhx_Y&index=19&list=PL4AFF701184976B25)

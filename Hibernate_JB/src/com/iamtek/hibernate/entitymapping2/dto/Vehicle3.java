@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "VEHICLE")
 
-public class Vehicle {
+public class Vehicle3 {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int vehicleId;
@@ -13,7 +13,7 @@ public class Vehicle {
     private String vehicleName;
 
     @ManyToOne
-    private UserDetails5 user;
+    private UserDetails3 user;
 
     public int getVehicleId() {
         return vehicleId;
@@ -31,11 +31,11 @@ public class Vehicle {
         this.vehicleName = vehicleName;
     }
 
-    public UserDetails5 getUser() {
+    public UserDetails3 getUser() {
         return user;
     }
 
-    public void setUser(UserDetails5 user) {
+    public void setUser(UserDetails3 user) {
         this.user = user;
     }
 }

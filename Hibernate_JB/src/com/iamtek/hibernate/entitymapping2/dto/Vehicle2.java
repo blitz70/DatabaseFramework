@@ -1,21 +1,19 @@
 package com.iamtek.hibernate.entitymapping2.dto;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
 
 @Entity
 @Table(name = "VEHICLE")
 
-public class Vehicle7 {
+public class Vehicle2 {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int vehicleId;
 
     private String vehicleName;
 
-    @ManyToMany(mappedBy = "vehicleList")
-    private Collection<UserDetails7> userList = new ArrayList<>();
+    @ManyToOne
+    private UserDetails2 user;
 
     public int getVehicleId() {
         return vehicleId;
@@ -33,11 +31,11 @@ public class Vehicle7 {
         this.vehicleName = vehicleName;
     }
 
-    public Collection<UserDetails7> getUserList() {
-        return userList;
+    public UserDetails2 getUser() {
+        return user;
     }
 
-    public void setUserList(Collection<UserDetails7> userList) {
-        this.userList = userList;
+    public void setUser(UserDetails2 user) {
+        this.user = user;
     }
 }

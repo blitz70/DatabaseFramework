@@ -13,8 +13,10 @@ public class UserDetails6 {
 
     private String userName;
 
-    @OneToMany(mappedBy = "user")
-    private Collection<Vehicle6> vehicle = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.PERSIST)
+    //@OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "USER_VEHICLE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
+    private Collection<Vehicle6> vehicleList = new ArrayList<>();
 
     public int getUserId() {
         return userId;
@@ -32,11 +34,11 @@ public class UserDetails6 {
         this.userName = userName;
     }
 
-    public Collection<Vehicle6> getVehicle() {
-        return vehicle;
+    public Collection<Vehicle6> getVehicleList() {
+        return vehicleList;
     }
 
-    public void setVehicle(Collection<Vehicle6> vehicle) {
-        this.vehicle = vehicle;
+    public void setVehicleList(Collection<Vehicle6> vehicleList) {
+        this.vehicleList = vehicleList;
     }
 }

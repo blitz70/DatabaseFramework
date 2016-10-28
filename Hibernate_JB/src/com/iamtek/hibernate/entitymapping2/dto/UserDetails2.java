@@ -1,12 +1,6 @@
 package com.iamtek.hibernate.entitymapping2.dto;
 
-import org.hibernate.annotations.CollectionId;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
 
 @Entity
 @Table (name = "USER_DETAILS")
@@ -17,14 +11,8 @@ public class UserDetails2 {
 
     private String userName;
 
-    @ElementCollection
-    @JoinTable(name = "USER_ADDRESS", joinColumns = @JoinColumn(name = "USER_ID"))
-    @GenericGenerator(name="sequence-gen",strategy="sequence")
-    @CollectionId(columns = {@Column(name = "ADDRESS_ID")}
-            , generator = "sequence-gen"
-            , type = @Type(type = "long")
-    )
-    private Collection<Address> listOfAddress = new ArrayList<Address>();
+    @OneToOne @JoinColumn(name = "VEHICLE_ID")
+    private Vehicle2 vehicle;
 
     public int getUserId() {
         return userId;
@@ -42,12 +30,12 @@ public class UserDetails2 {
         this.userName = userName;
     }
 
-    public Collection<Address> getListOfAddress() {
-        return listOfAddress;
+    public Vehicle2 getVehicle() {
+        return vehicle;
     }
 
-    public void setListOfAddress(Collection<Address> listOfAddress) {
-        this.listOfAddress = listOfAddress;
+    public void setVehicle(Vehicle2 vehicle) {
+        this.vehicle = vehicle;
     }
 
 }

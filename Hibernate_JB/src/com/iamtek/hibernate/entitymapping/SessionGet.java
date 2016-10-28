@@ -1,13 +1,13 @@
-package com.iamtek.hibernate.entitymapping1;
+package com.iamtek.hibernate.entitymapping;
 
-import com.iamtek.hibernate.entitymapping1.dto.UserDetails2;
+import com.iamtek.hibernate.entitymapping.dto.UserDetails2;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import java.util.Date;
 
-public class Annotations {
+public class SessionGet {
 
     public static void main(String[] args) {
 
@@ -19,10 +19,19 @@ public class Annotations {
         user.setDescription("First user desc");
         user.setTransientField("not saved");
 
-        SessionFactory sessionFactory = new Configuration().configure("com/iamtek/hibernate/entitymapping1/hibernate.cfg1.xml").buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails2.class).buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);
+        session.getTransaction().commit();
+        session.close();
+
+        user = null;
+
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+        user = session.get(UserDetails2.class, 1);
+        System.out.println("user name retrieved is " + user.getUserName());
         session.getTransaction().commit();
         session.close();
 

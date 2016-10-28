@@ -30,7 +30,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Names the annotated entity class -->
-        <mapping class="com.iamtek.hibernate.entitymapping1.dto.UserDetails2"/>
+        <mapping class="com.iamtek.hibernate.entitymapping.dto.UserDetails2"/>
 
     </session-factory>
 

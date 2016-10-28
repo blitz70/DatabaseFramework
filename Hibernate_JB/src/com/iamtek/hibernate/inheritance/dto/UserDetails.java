@@ -1,4 +1,4 @@
-package com.iamtek.hibernate.entitymapping2.dto;
+package com.iamtek.hibernate.inheritance.dto;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -6,16 +6,17 @@ import java.util.Collection;
 
 @Entity
 @Table (name = "USER_DETAILS")
-public class UserDetails7 {
+public class UserDetails {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
 
     private String userName;
 
-    @ManyToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
+    //@OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "USER_VEHICLE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
-    private Collection<Vehicle7> vehicleList = new ArrayList<>();
+    private Collection<Vehicle> vehicleList = new ArrayList<>();
 
     public int getUserId() {
         return userId;
@@ -33,11 +34,11 @@ public class UserDetails7 {
         this.userName = userName;
     }
 
-    public Collection<Vehicle7> getVehicleList() {
+    public Collection<Vehicle> getVehicleList() {
         return vehicleList;
     }
 
-    public void setVehicleList(Collection<Vehicle7> vehicleList) {
+    public void setVehicleList(Collection<Vehicle> vehicleList) {
         this.vehicleList = vehicleList;
     }
 }

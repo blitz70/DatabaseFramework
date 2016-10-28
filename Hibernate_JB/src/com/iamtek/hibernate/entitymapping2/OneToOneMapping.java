@@ -1,7 +1,7 @@
 package com.iamtek.hibernate.entitymapping2;
 
-import com.iamtek.hibernate.entitymapping2.dto.UserDetails4;
-import com.iamtek.hibernate.entitymapping2.dto.Vehicle;
+import com.iamtek.hibernate.entitymapping2.dto.UserDetails2;
+import com.iamtek.hibernate.entitymapping2.dto.Vehicle2;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,14 +10,14 @@ public class OneToOneMapping {
 
     public static void main(String[] args) {
 
-        UserDetails4 user = new UserDetails4();
-        Vehicle vehicle = new Vehicle();
+        UserDetails2 user = new UserDetails2();
+        Vehicle2 vehicle = new Vehicle2();
 
         user.setUserName("First User");
         user.setVehicle(vehicle);
         vehicle.setVehicleName("Car");
 
-        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails4.class).addAnnotatedClass(Vehicle.class).buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails2.class).addAnnotatedClass(Vehicle2.class).buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);

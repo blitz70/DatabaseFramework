@@ -1,11 +1,11 @@
-package com.iamtek.hibernate.entitymapping2.dto;
+package com.iamtek.hibernate.inheritance.dto;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "VEHICLE")
 
-public class Vehicle6 {
+public class Vehicle {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int vehicleId;

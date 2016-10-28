@@ -3,7 +3,6 @@ package com.iamtek.hibernate.entitymapping2.dto;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Set;
 
 @Entity
 @Table (name = "USER_DETAILS")
@@ -14,13 +13,9 @@ public class UserDetails5 {
 
     private String userName;
 
-    @OneToMany
-    @JoinTable(
-            name = "USER_VEHICLE"
-            , joinColumns = @JoinColumn(name = "USER_ID")
-            , inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID")
-    )
-    private Collection<Vehicle> vehicle = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "USER_VEHICLE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
+    private Collection<Vehicle5> vehicleList = new ArrayList<>();
 
     public int getUserId() {
         return userId;
@@ -38,12 +33,11 @@ public class UserDetails5 {
         this.userName = userName;
     }
 
-    public Collection<Vehicle> getVehicle() {
-        return vehicle;
+    public Collection<Vehicle5> getVehicleList() {
+        return vehicleList;
     }
 
-    public void setVehicle(Collection<Vehicle> vehicle) {
-        this.vehicle = vehicle;
+    public void setVehicleList(Collection<Vehicle5> vehicleList) {
+        this.vehicleList = vehicleList;
     }
-
 }

@@ -1,7 +1,6 @@
-package com.iamtek.hibernate.entitymapping2.dto;
+package com.iamtek.hibernate.valueobject.dto;
 
 import org.hibernate.annotations.CollectionId;
-import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
@@ -11,15 +10,20 @@ import java.util.Collection;
 
 @Entity
 @Table (name = "USER_DETAILS")
-public class UserDetails1 {
+public class UserDetails4 {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
 
     private String userName;
 
-    @ElementCollection(fetch = FetchType.EAGER)
+    @ElementCollection
     @JoinTable(name = "USER_ADDRESS", joinColumns = @JoinColumn(name = "USER_ID"))
+    @GenericGenerator(name="sequence-gen",strategy="sequence")
+    @CollectionId(columns = {@Column(name = "ADDRESS_ID")}
+            , generator = "sequence-gen"
+            , type = @Type(type = "long")
+    )
     private Collection<Address> listOfAddress = new ArrayList<>();
 
     public int getUserId() {

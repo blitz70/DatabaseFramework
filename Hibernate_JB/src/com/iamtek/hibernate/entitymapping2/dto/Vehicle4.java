@@ -5,12 +5,16 @@ import javax.persistence.*;
 @Entity
 @Table(name = "VEHICLE")
 
-public class Vehicle6 {
+public class Vehicle4 {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int vehicleId;
 
     private String vehicleName;
+
+    @ManyToOne
+    @JoinColumn(name = "USER_ID")
+    private UserDetails4 user;
 
     public int getVehicleId() {
         return vehicleId;
@@ -28,4 +32,11 @@ public class Vehicle6 {
         this.vehicleName = vehicleName;
     }
 
+    public UserDetails4 getUser() {
+        return user;
+    }
+
+    public void setUser(UserDetails4 user) {
+        this.user = user;
+    }
 }

@@ -1,7 +1,7 @@
-package com.iamtek.hibernate.entitymapping1;
+package com.iamtek.hibernate.valueobject;
 
-import com.iamtek.hibernate.entitymapping1.dto.Address;
-import com.iamtek.hibernate.entitymapping1.dto.UserDetails4;
+import com.iamtek.hibernate.valueobject.dto.Address;
+import com.iamtek.hibernate.valueobject.dto.UserDetails1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,7 +10,7 @@ public class ValueObject1 {
 
     public static void main(String[] args) {
 
-        UserDetails4 user = new UserDetails4();
+        UserDetails1 user = new UserDetails1();
         user.setUserName("First user");
 
         Address addr = new Address();
@@ -19,7 +19,7 @@ public class ValueObject1 {
 
         user.setAddress(addr);
 
-        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails4.class).buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails1.class).buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);

@@ -126,9 +126,11 @@ Configuration
             create : at startup db is reset
             update : db is only updated/changed
 
-Entity mapping 1, table customization
-    Concept
+Simple Entity mapping
+    Overview
         Maps how entity(java object) is mapped to table(db object), entity-table relationship
+        Simple entity mapping
+        Table customization
     DB object name
         Table : default = class name
             @Entity (name="table_name") : changes entity name, must use changed name in HQL
@@ -149,9 +151,9 @@ Entity mapping 1, table customization
             AUTO(Default) IDENTITY(MySQL) SEQUENCE(Oracle) TABLE
             @GeneratedValue(strategy=GenerationType.AUTO)
 
-Entity mapping 2
+Entity Mapping, Entity with Value Objects
     Overview
-        Value object
+        Mapping entity with value objects
         Collection (complex value objects)
         Proxy object & Fetch type
     Value object
@@ -193,6 +195,8 @@ Entity mapping 2
             Eager : load all data on entity initialization
         Annotation
             @ElementCollection(fetch = FetchType.EAGER)
+
+Entity Mapping, Entity with entities
     One to One mapping
         Concept
             Entity within entity
@@ -226,7 +230,13 @@ Entity mapping 2
                     , inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID")
                 )
     Legacy Data
-        @NotFound(action=NotFoundAction.IGNORE)
+        @NotFound(action = NotFoundAction.IGNORE)
+    Cascade
+        Saving/persist strategy of entities with entity members, ALL DETACH MERGE PERSIST REFRESH REMOVE
+            Persist : when an entity is saved all sub entities are automatically saved
+            All : when an entity is changed so are all the sub entities
+        @OneToMany(cascade = CascadeType.PERSIST)
+
 
 [IntelliJ]
 Class hierarchy : ctrl + h

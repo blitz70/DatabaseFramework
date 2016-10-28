@@ -1,10 +1,11 @@
-package com.iamtek.hibernate.entitymapping1.dto;
+package com.iamtek.hibernate.valueobject.dto;
+
 
 import javax.persistence.*;
 
 @Entity
 @Table (name = "USER_DETAILS")
-public class UserDetails5 {
+public class UserDetails2 {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;

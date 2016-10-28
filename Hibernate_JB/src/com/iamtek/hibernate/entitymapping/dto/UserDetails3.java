@@ -1,4 +1,4 @@
-package com.iamtek.hibernate.entitymapping1.dto;
+package com.iamtek.hibernate.entitymapping.dto;
 
 import javax.persistence.*;
 

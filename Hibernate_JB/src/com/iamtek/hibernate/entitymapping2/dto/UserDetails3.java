@@ -1,10 +1,5 @@
 package com.iamtek.hibernate.entitymapping2.dto;
 
-import org.hibernate.annotations.CollectionId;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,9 +13,13 @@ public class UserDetails3 {
 
     private String userName;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @JoinTable(name = "USER_ADDRESS", joinColumns = @JoinColumn(name = "USER_ID"))
-    private Collection<Address> listOfAddress = new ArrayList<>();
+    @OneToMany
+    @JoinTable(
+            name = "USER_VEHICLE"
+            , joinColumns = @JoinColumn(name = "USER_ID")
+            , inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID")
+    )
+    private Collection<Vehicle3> vehicle = new ArrayList<>();
 
     public int getUserId() {
         return userId;
@@ -38,12 +37,12 @@ public class UserDetails3 {
         this.userName = userName;
     }
 
-    public Collection<Address> getListOfAddress() {
-        return listOfAddress;
+    public Collection<Vehicle3> getVehicle() {
+        return vehicle;
     }
 
-    public void setListOfAddress(Collection<Address> listOfAddress) {
-        this.listOfAddress = listOfAddress;
+    public void setVehicle(Collection<Vehicle3> vehicle) {
+        this.vehicle = vehicle;
     }
 
 }

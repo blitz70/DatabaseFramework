@@ -1,16 +1,16 @@
-package com.iamtek.hibernate.entitymapping2;
+package com.iamtek.hibernate.valueobject;
 
-import com.iamtek.hibernate.entitymapping2.dto.Address;
-import com.iamtek.hibernate.entitymapping2.dto.UserDetails1;
+import com.iamtek.hibernate.valueobject.dto.Address;
+import com.iamtek.hibernate.valueobject.dto.UserDetails4;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Collections1 {
+public class Collections2 {
 
     public static void main(String[] args) {
 
-        UserDetails1 user = new UserDetails1();
+        UserDetails4 user = new UserDetails4();
         user.setUserName("First User");
 
         Address addr1 = new Address();
@@ -28,7 +28,7 @@ public class Collections1 {
         user.getListOfAddress().add(addr1);
         user.getListOfAddress().add(addr2);
 
-        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails1.class).buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails4.class).buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);
