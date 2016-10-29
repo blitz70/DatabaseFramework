@@ -65,3 +65,8 @@ Database framework study with IntelliJ
 >* Single Table [19](https://www.youtube.com/watch?v=Zj1mRWfhx_Y&index=19&list=PL4AFF701184976B25) [20](https://www.youtube.com/watch?v=M5YrLtAHtOo&index=20&list=PL4AFF701184976B25)
 * Table Per Class [21](https://www.youtube.com/watch?v=qIdM4KQOtH8&index=21&list=PL4AFF701184976B25)
 * Joined [22](https://www.youtube.com/watch?v=o1b3HFIlDS0&index=22&list=PL4AFF701184976B25)
+
+* CRUD
+
+>* Create Read Update Delete [23](https://www.youtube.com/watch?v=hDBQy-dWC0A&list=PL4AFF701184976B25&index=23)
+* Transient, Persistent, Detached Objects [24](https://www.youtube.com/watch?v=kZpRyEABnms&list=PL4AFF701184976B25&index=24) [25](https://www.youtube.com/watch?v=sjZGFHEdD4M&list=PL4AFF701184976B25&index=25) [26](https://www.youtube.com/watch?v=T02FicxK_aY&index=26&list=PL4AFF701184976B25)

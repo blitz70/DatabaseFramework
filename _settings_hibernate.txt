@@ -13,13 +13,39 @@ CREATE TABLE `mydb`.`student` (
 	Add libraries : JDBC, Hibernate(required)
 	Register to build path
 
-[Configuration]
-    hibernate.cfg.xml
-        <hibernate-configuration>
-            <session-factory>
-                <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-                <property name="connection.url">jdbc:mysql://localhost:3306/mydb?useSSL=false</property>
-                <property name="connection.username">blitz</property>
-                <property name="connection.password">blitz</property>
-            </session-factory>
-        </hibernate-configuration>
+[Database] hibernate.cfg.xml
+    MySQL/MariaDB
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/mydb?useSSL=false</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    PostgreSQL
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/mydb</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+
+
+[Configuration] hibernate.cfg.xml
+    <!DOCTYPE hibernate-configuration PUBLIC
+            "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+            "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    <hibernate-configuration>
+        <session-factory>
+            <!-- Database connection settings -->
+            <property name="connection.driver_class">org.postgresql.Driver</property>
+            <property name="connection.url">jdbc:postgresql://localhost:5432/mydb</property>
+            <property name="connection.username">blitz</property>
+            <property name="connection.password">blitz</property>
+            <!-- JDBC connection pool (use the built-in) -->
+            <property name="connection.pool_size">1</property>
+            <!-- SQL dialect -->
+            <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+            <!-- Disable the second-level cache  -->
+            <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+            <!-- Echo all executed SQL to stdout -->
+            <property name="show_sql">true</property>
+            <!-- Drop and re-create the database schema on startup -->
+            <property name="hbm2ddl.auto">create</property>
+            <!-- Names the annotated entity class -->
+            <mapping class="com.iamtek.hibernate.introduction.dto.UserDetails"/>
+        </session-factory>
+    </hibernate-configuration>

@@ -109,8 +109,16 @@ No Hibernate      vs      With Hibernate
 
 Hibernate API
     Create session factory
+        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass().buildSessionFactory();
     Create session from session factory
+        Session session = sessionFactory.openSession();
     Use session to save model objects
+        session.beginTransaction();
+        ...
+        session.getTransaction().commit();
+    End
+        session.close();
+        sessionFactory.close();
 
 Configuration
     hibernate.cfg.xml : xml setup for hibernate
@@ -222,12 +230,6 @@ Entity with Entities
         Annotation
             Declaration
                 @ManyToMany
-            Customization
-                @JoinTable(
-                    name = "USER_VEHICLE"
-                    , joinColumns = @JoinColumn(name = "USER_ID")
-                    , inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID")
-                )
     Legacy Data
         @NotFound(action = NotFoundAction.IGNORE)
     Cascade
@@ -264,5 +266,25 @@ Inheritance
         Parent : @DiscriminatorColumn(name = "VEHICLE_TYPE", discriminatorType = DiscriminatorType.STRING)
         Child : @DiscriminatorValue(value = "2W")
 
-[IntelliJ]
-Class hierarchy : ctrl + h
+Object states
+    Overview
+        Transient -> session(Persistent) <-> Detached
+    States
+        Transient : State after creation/deletion, not tracked by hibernate
+            new(), session.delete()
+        Persistent : State when entity is tracked by hibernate
+            Entity automatically saved/updated to database smartly, least db access
+            session.save(), session.get(), session.update()
+        Detached : State after closed session, not tracked by hibernate
+            session.close()
+    State transitions
+        Create : new -> [T]  -save->  [P] -close->  [D]
+        Read   :              -get->  [P] -close->  [D]
+        Update :                      [P] <-update- [D]
+        Delete :        [T] <-delete- [P] -close->  [D]
+    Detached -> Persistent
+        Always tracking entity is not good, only track when needed
+        Show data to user(after get data from db) -..takes time..-> Get input from user(to update data to db)
+        @Entity @SelectBeforeUpdate
+            True : do db select before update, if entity is not likely to be changed
+            False : do db update when entity becomes persistent, if entity is likely to be changed
