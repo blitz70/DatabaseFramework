@@ -7,8 +7,7 @@ public class TestJdbc {
 
     public static void main(String[] args) {
 
-        //String jdbcUrl = "jdbc:mysql://localhost:3306/mydb?useSSL=false";
-        String jdbcUrl = "jdbc:mysql://localhost:3306/mydb";
+        String jdbcUrl = "jdbc:mariadb://localhost:3306/mydb";
         String username = "blitz";
         String password = "blitz";
 

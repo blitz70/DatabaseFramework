@@ -14,9 +14,14 @@ CREATE TABLE `mydb`.`student` (
 	Register to build path
 
 [Database] hibernate.cfg.xml
-    MySQL/MariaDB
+    MariaDB
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    MySQL
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/mydb?useSSL=false</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/mydb</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
     PostgreSQL
         <property name="connection.driver_class">org.postgresql.Driver</property>
