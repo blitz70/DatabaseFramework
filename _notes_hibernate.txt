@@ -288,3 +288,25 @@ Object states
         @Entity @SelectBeforeUpdate
             True : do db select before update, if entity is not likely to be changed
             False : do db update when entity becomes persistent, if entity is likely to be changed
+
+HQL, Hibernate Query Language
+    Concept
+        Similar syntax to SQL, used for bulk db access
+    Query
+        Query object
+            String hql = "from UserDetails1 where userId > 5";
+            Query query = session.createQuery(hql);
+            List users = query.list();
+        Condition
+            query.setFirstResult(5);
+            query.setMaxResults(4);
+    Parameter Binding
+        Position binding
+            hql = "FROM UserDetails WHERE userId > ? AND userName = ?";
+            query.setParameter(0, 5);
+            query.setParameter(1, "User 10");
+        Name binding
+            hql = "FROM UserDetails WHERE userId > :param1 AND userName = :param2";
+            query.setParameter("param1", 5);
+                query.setParameter("param2", "User 10");
+

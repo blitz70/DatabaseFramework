@@ -31,6 +31,7 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="com.iamtek.hibernate.crud.dto.UserDetails1"/>
+        <mapping class="com.iamtek.hibernate.hql.dto.UserDetails"/>
 
     </session-factory>
 

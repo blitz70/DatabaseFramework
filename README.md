@@ -70,3 +70,9 @@ Database framework study with IntelliJ
 
 >* Create Read Update Delete [23](https://www.youtube.com/watch?v=hDBQy-dWC0A&list=PL4AFF701184976B25&index=23)
 * Transient, Persistent, Detached Objects [24](https://www.youtube.com/watch?v=kZpRyEABnms&list=PL4AFF701184976B25&index=24) [25](https://www.youtube.com/watch?v=sjZGFHEdD4M&list=PL4AFF701184976B25&index=25) [26](https://www.youtube.com/watch?v=T02FicxK_aY&index=26&list=PL4AFF701184976B25)
+
+* HQL, Hibernate Query Language
+
+>* Query Object [27](https://www.youtube.com/watch?v=Em4M2tUn1bU&index=27&list=PL4AFF701184976B25)
+* Pagination [28](https://www.youtube.com/watch?v=WVHFpp8X5z0&index=28&list=PL4AFF701184976B25)
+* Parameter Binding [29](https://www.youtube.com/watch?v=PiahhQ0Qkak&index=29&list=PL4AFF701184976B25)
