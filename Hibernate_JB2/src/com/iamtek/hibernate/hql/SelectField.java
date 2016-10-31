@@ -1,6 +1,5 @@
 package com.iamtek.hibernate.hql;
 
-import com.iamtek.hibernate.hql.dto.UserDetails;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -21,7 +20,7 @@ public class SelectField {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        Query query = session.createQuery("SELECT userName FROM UserDetails");
+        Query query = session.createQuery("SELECT userName FROM UserDetails1");
 
         List users = query.list();
         session.getTransaction().commit();

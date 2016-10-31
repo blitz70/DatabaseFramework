@@ -1,6 +1,6 @@
 package com.iamtek.hibernate.hql;
 
-import com.iamtek.hibernate.hql.dto.UserDetails;
+import com.iamtek.hibernate.hql.dto.UserDetails1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -21,15 +21,15 @@ public class Pagination {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        Query query = session.createQuery("from UserDetails");
+        Query query = session.createQuery("from UserDetails1");
         query.setFirstResult(5);
         query.setMaxResults(4);
 
-        List<UserDetails> users = (List<UserDetails>) query.list();
+        List<UserDetails1> users = (List<UserDetails1>) query.list();
         session.getTransaction().commit();
         session.close();
 
-        for (UserDetails user : users) {
+        for (UserDetails1 user : users) {
             System.out.println(user.getUserName());
         }
 

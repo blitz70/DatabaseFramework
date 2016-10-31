@@ -1,6 +1,6 @@
 package com.iamtek.hibernate.hql;
 
-import com.iamtek.hibernate.hql.dto.UserDetails;
+import com.iamtek.hibernate.hql.dto.UserDetails1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -12,7 +12,7 @@ public class Data {
         try {
             session.beginTransaction();
             for (int i = 1; i < 11; i++) {
-                UserDetails user = new UserDetails();
+                UserDetails1 user = new UserDetails1();
                 user.setUserName("User " + i);
                 session.save(user);
             }

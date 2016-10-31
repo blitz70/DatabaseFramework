@@ -33,7 +33,7 @@ Primary Key
         IDENTITY : MySQL (AUTO_INCREMENT)
         SEQUENCE : Oracle
         TABLE : ...
-    Can make costume generation strategy, but not recommended
+    Can make custom generation strategy, but not recommended
         unique value, high-volume/multi-thread, server clusters
 
 Hibernate Session & Transaction
@@ -308,5 +308,14 @@ HQL, Hibernate Query Language
         Name binding
             hql = "FROM UserDetails WHERE userId > :param1 AND userName = :param2";
             query.setParameter("param1", 5);
-                query.setParameter("param2", "User 10");
+            query.setParameter("param2", "User 10");
+    Named Query
+        Concept
+            Group queries with related entities, OOP encapsulation
+        Declaration (Entity)
+            HQL : @NamedQuery(name = "userDetails.byId", query = "FROM UserDetails2 where userId = ?")
+            SQL : @NamedNativeQuery(name = "userDetails.byName", query = "SELECT * FROM USER_DETAILS WHERE userName = ?", resultClass = UserDetails2.class)
+        Use
+            session.getNamedQuery("userDetails.byId");
+            session.getNamedQuery("userDetails.byName");
 

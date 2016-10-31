@@ -76,3 +76,5 @@ Database framework study with IntelliJ
 >* Query Object [27](https://www.youtube.com/watch?v=Em4M2tUn1bU&index=27&list=PL4AFF701184976B25)
 * Pagination [28](https://www.youtube.com/watch?v=WVHFpp8X5z0&index=28&list=PL4AFF701184976B25)
 * Parameter Binding [29](https://www.youtube.com/watch?v=PiahhQ0Qkak&index=29&list=PL4AFF701184976B25)
+* Named Queries [30](https://www.youtube.com/watch?v=o_P-p2b_k6w&list=PL4AFF701184976B25&index=30)
+* Criteria API [31](https://www.youtube.com/watch?v=4fVlAobgQGI&index=31&list=PL4AFF701184976B25)
