@@ -318,4 +318,15 @@ HQL, Hibernate Query Language
         Use
             session.getNamedQuery("userDetails.byId");
             session.getNamedQuery("userDetails.byName");
+    Criteria API
+        Concept
+            Similar to adding conditions to HQL/SQL without using query language
+            Allows adding restrictions by chaining
+            Deprecated in latest Hibernate version
+        Criteria object
+            Criteria criteria = session.createCriteria(UserDetails2.class);
+            List users = criteria.list();
+        Criterion & Restriction
+            Criterion criterion = Restrictions.eq("userId", 10);
+            criteria.add(criterion);
 
