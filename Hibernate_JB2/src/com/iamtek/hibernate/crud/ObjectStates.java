@@ -12,7 +12,7 @@ public class ObjectStates {
         UserDetails1 user = new UserDetails1();
         user.setUserName("Test user");
 
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails1.class).buildSessionFactory();
         Session session = sessionFactory.openSession();
 
         session.beginTransaction();

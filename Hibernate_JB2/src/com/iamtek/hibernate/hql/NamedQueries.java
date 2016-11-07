@@ -1,5 +1,6 @@
 package com.iamtek.hibernate.hql;
 
+import com.iamtek.hibernate.hql.dto.UserDetails1;
 import com.iamtek.hibernate.hql.dto.UserDetails2;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,12 +13,13 @@ public class NamedQueries {
 
     public static void main(String[] args) {
 
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails1.class).addAnnotatedClass(UserDetails2.class).buildSessionFactory();
         Session session;
         Query query;
 
         //Prepare data
         Data.create(sessionFactory);
+
 
         //HQL
         session = sessionFactory.openSession();

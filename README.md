@@ -83,3 +83,4 @@ Database framework study with IntelliJ
 >* Criteria, Criterion, Restriction [31](https://www.youtube.com/watch?v=4fVlAobgQGI&index=31&list=PL4AFF701184976B25) [32](https://www.youtube.com/watch?v=MzrzsKSJBt0&index=32&list=PL4AFF701184976B25)
 * Projections, Query By Example [33](https://www.youtube.com/watch?v=2DXjdl8gzOo&index=33&list=PL4AFF701184976B25)
 
+* Caching in Hibernate [34](https://www.youtube.com/watch?v=ISi_OkmuQbs&list=PL4AFF701184976B25&index=34)

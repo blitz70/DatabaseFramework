@@ -340,3 +340,16 @@ Criteria API
             exampleUser.setUserName("User 5");
             Example example = Example.create(exampleUser);
             criteria = session.createCriteria(UserDetails1.class).add(example);
+
+Caching in Hibernate
+    Concept
+        Buffer for database interaction
+        Intelligently managed to keep db interaction to minimum
+    1st Level
+        Within session, automatically used
+    2nd Level
+        Across sessions
+        Across applications
+        Across clusters
+        hibernate.cfg.xml
+http://www.ehcache.org/

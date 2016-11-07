@@ -10,8 +10,9 @@ public class Delete {
 
     public static void main(String[] args) {
 
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(UserDetails1.class).buildSessionFactory();
         Session session = sessionFactory.openSession();
+        Data.create(sessionFactory);
 
         //Delete
         session.beginTransaction();
