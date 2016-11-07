@@ -77,5 +77,9 @@ Database framework study with IntelliJ
 * Pagination [28](https://www.youtube.com/watch?v=WVHFpp8X5z0&index=28&list=PL4AFF701184976B25)
 * Parameter Binding [29](https://www.youtube.com/watch?v=PiahhQ0Qkak&index=29&list=PL4AFF701184976B25)
 * Named Queries [30](https://www.youtube.com/watch?v=o_P-p2b_k6w&list=PL4AFF701184976B25&index=30)
-* Criteria, Criterion, Restriction [31](https://www.youtube.com/watch?v=4fVlAobgQGI&index=31&list=PL4AFF701184976B25) [32](https://www.youtube.com/watch?v=MzrzsKSJBt0&index=32&list=PL4AFF701184976B25)
+
+* Criteria API
+
+>* Criteria, Criterion, Restriction [31](https://www.youtube.com/watch?v=4fVlAobgQGI&index=31&list=PL4AFF701184976B25) [32](https://www.youtube.com/watch?v=MzrzsKSJBt0&index=32&list=PL4AFF701184976B25)
+* Projections, Query By Example [33](https://www.youtube.com/watch?v=2DXjdl8gzOo&index=33&list=PL4AFF701184976B25)
 

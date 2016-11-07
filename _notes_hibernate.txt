@@ -291,6 +291,7 @@ Object states
 
 HQL, Hibernate Query Language
     Concept
+        2nd method of hibernate operation (1st is CRUD entity operation)
         Similar syntax to SQL, used for bulk db access
     Query
         Query object
@@ -318,15 +319,24 @@ HQL, Hibernate Query Language
         Use
             session.getNamedQuery("userDetails.byId");
             session.getNamedQuery("userDetails.byName");
-    Criteria API
-        Concept
-            Similar to adding conditions to HQL/SQL without using query language
-            Allows adding restrictions by chaining
-            Deprecated in latest Hibernate version
-        Criteria object
-            Criteria criteria = session.createCriteria(UserDetails2.class);
-            List users = criteria.list();
-        Criterion & Restriction
-            Criterion criterion = Restrictions.eq("userId", 10);
-            criteria.add(criterion);
 
+Criteria API
+    Concept
+        3rd method of hibernate operation, but deprecated
+        Similar to adding conditions to HQL/SQL without using query language
+        Allows chaining
+    Criteria object
+        Criteria criteria = session.createCriteria(UserDetails2.class);
+        List users = criteria.list();
+    Criterion & Restriction
+        Criterion criterion = Restrictions.eq("userId", 10);
+        criteria.add(criterion);
+    Projections
+        criteria.setProjection(Projections.property("userId")).addOrder(Order.desc("userId"));
+    Query by Example
+        Primary key and null value of example are ignored
+            UserDetails1 exampleUser = new UserDetails1();
+            exampleUser.setUserId(5);
+            exampleUser.setUserName("User 5");
+            Example example = Example.create(exampleUser);
+            criteria = session.createCriteria(UserDetails1.class).add(example);
