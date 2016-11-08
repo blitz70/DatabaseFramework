@@ -5,10 +5,8 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
-@Entity
-@Cacheable
-@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
-@Table(name = "USER_DETAILS")
+@Entity @Table(name = "USER_DETAILS")
+@Cacheable @Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class UserDetails2 {
 
     @Id

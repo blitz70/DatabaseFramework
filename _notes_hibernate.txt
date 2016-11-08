@@ -345,11 +345,19 @@ Caching in Hibernate
     Concept
         Buffer for database interaction
         Intelligently managed to keep db interaction to minimum
-    1st Level
-        Within session, automatically used
-    2nd Level
-        Across sessions
-        Across applications
-        Across clusters
-        hibernate.cfg.xml
-http://www.ehcache.org/
+        1st level : within session, automatically used
+        2nd level : across sessions, applications, clusters
+            CRUD, HQL
+    2nd level cache configuration
+        Library (from hibernate/lib/optional/ehcache)
+            ehcache, hibernate-ehcache, slf4j-api jars
+        hibernate.cfg.xml (<session-factory>)
+            <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+            CRUD : <property name="hibernate.cache.use_second_level_cache">true</property>
+            HQL : <property name="hibernate.cache.use_query_cache">true</property>
+        Entity
+            @Cacheable @Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+        Query
+            Query query = session.createQuery(hql).setCacheable(true);
+
+

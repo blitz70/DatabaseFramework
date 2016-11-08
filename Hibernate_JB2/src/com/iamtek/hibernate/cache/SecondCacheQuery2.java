@@ -4,12 +4,15 @@ import com.iamtek.hibernate.cache.dto.UserDetails2;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
-public class SecondCache2 {
+import java.util.List;
+
+public class SecondCacheQuery2 {
 
     public static void main(String[] args) {
 
-        SessionFactory sessionFactory = new Configuration().configure("/hibernate.cfg2.xml").addAnnotatedClass(UserDetails2.class).buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure("/hibernate.cfg3.xml").addAnnotatedClass(UserDetails2.class).buildSessionFactory();
 
         //data
         Session session = sessionFactory.openSession();
@@ -22,15 +25,17 @@ public class SecondCache2 {
         session.getTransaction().commit();
         session.close();
 
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-        UserDetails2 user = session.get(UserDetails2.class, 1);
-        session.getTransaction().commit();
-        session.close();
+        Session session1 = sessionFactory.openSession();
+        session1.beginTransaction();
+        Query query1 = session1.createQuery("from UserDetails2 user where user.userId = 1").setCacheable(true);
+        List users1 = query1.list();
+        session1.getTransaction().commit();
+        session1.close();
 
         Session session2 = sessionFactory.openSession();
         session2.beginTransaction();
-        UserDetails2 user2 = session2.get(UserDetails2.class, 1);
+        Query query2 = session2.createQuery("from UserDetails2 user where user.userId = 1").setCacheable(true);
+        List users2 = query2.list();
         session2.getTransaction().commit();
         session2.close();
 
